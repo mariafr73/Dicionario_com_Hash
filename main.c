@@ -16,6 +16,28 @@ typedef struct listadinamica
     int tamanho;
 } ListaD;
 
+typedef struct dicionario
+{
+    ListaD *aurelio[26];
+} Dict;
+
+void inicializaDict(Dict *dicionario)
+{
+    for (int i = 0; i < 26; i++)
+    {
+        dicionario->aurelio[i] = malloc(sizeof(ListaD));
+        if (dicionario->aurelio[i] == NULL)
+        {
+            printf("Erro ao alocar!");
+            exit(1);
+        }
+        dicionario->aurelio[i]->primeiro = NULL;
+        dicionario->aurelio[i]->ultimo = NULL;
+        dicionario->aurelio[i]->tamanho = 0;
+
+    }
+}
+
 void AdicionaPalavra(ListaD *lista, char *nome)
 {
     Lista *novo = malloc(sizeof(Lista));
