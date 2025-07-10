@@ -136,12 +136,39 @@ void removePalavra(ListaD *lista, char *nome)
     }
 }
 
+void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao)
+{
+    int indice = funcaoHash(nome);
+    if (indice == -1)
+    {
+        printf("Palavra inválida para hash!");
+        return;
+    }
+
+    AdicionaPalavra(dicionario->aurelio[indice], nome, descricao);
+}
+
 int main()
 {
-    // ListaD lista;
-    char nome[] = "ALIce";
-    int hash = funcaoHash(nome);
-    printf("%d", hash);//nao está retornando o valor esperado, use o gdb para debugar 
+    Dict dicionario;
+    //ListaD lista;
+    //inicializaLista(&lista);
+    inicializaDict(&dicionario);
+
+    char nome[] = "Alice";
+    char descricao[] = "vai quebrar o codigo";
+
+    char nome1[] = "Gabi";
+    char descricao1[] = "vai arrumar";
+
+    adicionaNaTabela(&dicionario, nome,descricao);
+    adicionaNaTabela(&dicionario, nome1,descricao1);
+
+
+    
+
+    
+
 
     return 0;
 }
