@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 typedef struct lista
 {
     char nome[25];
+    char descricao[100];
     struct lista *prox;
 
 } Lista;
@@ -21,6 +23,14 @@ typedef struct dicionario
     ListaD *aurelio[26];
 } Dict;
 
+void para_minusculas(char *string)
+{
+    for (int i = 0; string[i] != '\0'; i++)
+    {
+        string[i] = tolower((unsigned char)string[i]);
+    }
+}
+
 void inicializaDict(Dict *dicionario)
 {
     for (int i = 0; i < 26; i++)
@@ -34,11 +44,18 @@ void inicializaDict(Dict *dicionario)
         dicionario->aurelio[i]->primeiro = NULL;
         dicionario->aurelio[i]->ultimo = NULL;
         dicionario->aurelio[i]->tamanho = 0;
-
     }
 }
 
-void AdicionaPalavra(ListaD *lista, char *nome)
+int funcaoHash(char *nome)
+{
+    para_minusculas(nome);
+    // adicionar aqui verificação para nome, ao aceite do a - z
+    int posicao = nome[0];
+    return posicao - 97;
+}
+
+void AdicionaPalavra(ListaD *lista, char *nome, char *descricao)
 {
     Lista *novo = malloc(sizeof(Lista));
     if (novo == NULL)
@@ -47,6 +64,7 @@ void AdicionaPalavra(ListaD *lista, char *nome)
         exit(1);
     }
     strcpy(novo->nome, nome);
+    strcpy(novo->descricao, descricao);
     novo->prox = NULL;
 
     if (lista->primeiro == NULL)
@@ -76,6 +94,7 @@ void imprimeLista(ListaD *lista)
     while (cont != NULL)
     {
         printf("nome: %s\n", cont->nome);
+        printf("Descricao: %s", cont->descricao);
         cont = cont->prox;
     }
 }
@@ -103,7 +122,7 @@ void removePalavra(ListaD *lista, char *nome)
             else
             {
                 anterior->prox = atual->prox;
-                if ((lista->ultimo = atual))
+                if ((lista->ultimo == atual))
                 {
                     lista->ultimo = anterior;
                 }
@@ -119,21 +138,10 @@ void removePalavra(ListaD *lista, char *nome)
 
 int main()
 {
-    ListaD lista;
-    inicializaLista(&lista);
+    // ListaD lista;
+    char nome[] = "ALIce";
+    int hash = funcaoHash(nome);
+    printf("%d", hash);//nao está retornando o valor esperado, use o gdb para debugar 
 
-    AdicionaPalavra(&lista, "alice");
-    AdicionaPalavra(&lista, "caroline");
-    AdicionaPalavra(&lista, "felipe");
-    AdicionaPalavra(&lista, "peter");
-    AdicionaPalavra(&lista, "manolo");
-
-    imprimeLista(&lista);
-
-    removePalavra(&lista, "caroline");
-    removePalavra(&lista, "alice");
-    removePalavra(&lista, "manolo");
-
-    imprimeLista(&lista);
     return 0;
 }
