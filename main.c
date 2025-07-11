@@ -99,6 +99,19 @@ void imprimeLista(ListaD *lista)
     }
 }
 
+void imprimeDict(Dict *dicionario)
+{
+    for (int i = 0; i < 26; i++)
+    {
+        if (dicionario->aurelio[i]->tamanho > 0)
+        {
+            printf("'%c':\n", i + 'A');
+            imprimeLista(dicionario->aurelio[i]);
+            printf("\n");
+        }
+    }
+}
+
 void removePalavra(ListaD *lista, char *nome)
 {
     if (lista->primeiro == NULL)
@@ -151,9 +164,10 @@ void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao)
 int main()
 {
     Dict dicionario;
-    //ListaD lista;
-    //inicializaLista(&lista);
+    ListaD lista;
+    inicializaLista(&lista);
     inicializaDict(&dicionario);
+
 
     char nome[] = "Alice";
     char descricao[] = "vai quebrar o codigo";
@@ -161,14 +175,12 @@ int main()
     char nome1[] = "Gabi";
     char descricao1[] = "vai arrumar";
 
-    adicionaNaTabela(&dicionario, nome,descricao);
-    adicionaNaTabela(&dicionario, nome1,descricao1);
-
-
     
 
-    
+    adicionaNaTabela(&dicionario, nome, descricao);
+    adicionaNaTabela(&dicionario, nome1, descricao1);
 
+    imprimeDict(&dicionario);
 
     return 0;
 }
