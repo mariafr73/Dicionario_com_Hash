@@ -1,4 +1,4 @@
-#include "util.h"
+#include "../include/util.h"
 #include <ctype.h>
 
 void para_minusculas(char *string)

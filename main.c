@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "../include/dict.h"
+#include "include/dict.h"
 /*o que falta: adicionar verificações: não aceitar números e símbolos (e outras aí..rs :p),
 estrutura CRUD, funcao para liberar dicionario, função para remover palavra E significado (tente aproveitar a que ja tem)
 */
@@ -11,22 +11,40 @@ estrutura CRUD, funcao para liberar dicionario, função para remover palavra E 
 
 int main()
 {
-    Dict dicionario;
-    ListaD lista;
-    inicializaLista(&lista);
-    inicializaDict(&dicionario);
+    Dict* dicionario = criaDict();
+    int opcao;
+    char nome[10];
+    char descricao[100];
 
-    char nome[] = "Alice";
-    char descricao[] = "vai quebrar o codigo";
+    printf("========================\n");
+    printf("[1] - Adicionar palavra\n");
+    printf("[2] - Buscar palavra\n");
+    printf("[3] - Remover palavra\n");
+    printf("========================\n");
+    printf("-> ");
+    scanf("%d",&opcao);
+    //funcao para verificar se é numero 
 
-    char nome1[] = "Gabi";
-    char descricao1[] = "vai arrumar";
 
-    adicionaNaTabela(&dicionario, nome, descricao);
-    adicionaNaTabela(&dicionario, nome1, descricao1);
+    switch (opcao)
+    {
+    case 1:
+        printf("Insira a palavra: ");
+        scanf("%[^\n]",nome);
+        //funcao de nao aceitar numeros e simbolos
+        printf("Insira o significado: ");
+        scanf("%[^\n]",descricao);
+        //funcao de nao aceitar numeros e simbolos
+        adicionaNaTabela(dicionario, nome, descricao);
 
-    imprimeDict(&dicionario);
+        break;
+    
+    default:
+        printf("Opcao invalida");
+        break;
+    }
 
+    
     // criar funcao para liberar dicionario
 
     return 0;

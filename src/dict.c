@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "dict.h"
+#include "../include/dict.h"
 
 void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao)
 {
@@ -11,7 +11,7 @@ void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao)
         return;
     }
 
-    AdicionaPalavra(dicionario->aurelio[indice], nome, descricao);
+    AdicionaPalavra(dicionario->aurelio[indice], nome, descricao);//erro de segmentaçaõ
 }
 
 void imprimeDict(Dict *dicionario)
@@ -27,18 +27,28 @@ void imprimeDict(Dict *dicionario)
     }
 }
 
-void inicializaDict(Dict *dicionario)
+Dict *criaDict()
 {
+    Dict *dicionario = malloc(sizeof(Dict));
+    if (dicionario == NULL)
+    {
+        printf("Erro ao alocar dicionário.\n");
+        exit(1);
+    }
+
     for (int i = 0; i < 26; i++)
     {
         dicionario->aurelio[i] = malloc(sizeof(ListaD));
         if (dicionario->aurelio[i] == NULL)
         {
-            printf("Erro ao alocar!");
+            printf("Erro ao alocar lista.\n");
             exit(1);
         }
+
         dicionario->aurelio[i]->primeiro = NULL;
         dicionario->aurelio[i]->ultimo = NULL;
         dicionario->aurelio[i]->tamanho = 0;
     }
+
+    return dicionario;
 }
