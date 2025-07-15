@@ -7,7 +7,7 @@
 estrutura CRUD, funcao para liberar dicionario, função para remover palavra E significado (tente aproveitar a que ja tem)
 */
 
-/*seria legal adicionar(opcional): salvar as listas em um arquivo.txt*/
+/*seria legal adicionar(opcional): salvar as listas em um arquivo.txt, adicionar make*/
 
 int main()
 {
@@ -22,12 +22,12 @@ int main()
         printf("[2] - Buscar palavra\n");
         printf("[3] - Imprimir\n");
         printf("[4] - Remover palavra\n");
-        printf("[5] - Sair\n");
+        printf("[0] - Sair\n");
         printf("========================\n");
         printf("-> ");
         scanf("%d", &opcao);
         getchar();
-        
+
         // funcao para verificar se é numero
 
         switch (opcao)
@@ -45,11 +45,14 @@ int main()
 
             break;
 
+        case 3:
+            imprimeDict(dicionario);
+
         default:
             printf("Opcao invalida");
             break;
         }
-    } while (opcao != 4);
+    } while (opcao != 0);
     // criar funcao para liberar dicionario
 
     return 0;
