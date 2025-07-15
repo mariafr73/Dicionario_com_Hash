@@ -11,6 +11,7 @@ typedef struct dicionario
 
 void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao);
 void imprimeDict(Dict *dicionario);
+void liberaDict(Dict *dicionario);
 Dict *criaDict();
 
 #endif

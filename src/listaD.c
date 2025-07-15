@@ -84,3 +84,16 @@ void removePalavra(ListaD *lista, char *nome)
         atual = atual->prox;
     }
 }
+
+void liberaLista(ListaD *lista){
+    Lista *atual = lista->primeiro;
+    Lista *prox;
+
+    while (atual != NULL)
+    {
+        prox = atual->prox;
+        free(atual);
+        atual = prox;
+    }
+    free(lista);
+}
