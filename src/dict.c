@@ -52,3 +52,14 @@ Dict *criaDict()
 
     return dicionario;
 }
+
+void liberaDict(Dict *dicionario) {
+    for (int i = 0; i < 26; i++) {
+        if (dicionario->aurelio[i] != NULL) {
+            liberaLista(dicionario->aurelio[i]);
+            dicionario->aurelio[i] = NULL;
+        }
+    }
+
+    free(dicionario);
+}

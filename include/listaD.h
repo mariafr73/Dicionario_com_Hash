@@ -13,5 +13,6 @@ void AdicionaPalavra(ListaD *lista, char *nome, char *descricao);
 void inicializaLista(ListaD *lista);
 void imprimeLista(ListaD *lista);
 void removePalavra(ListaD *lista, char *nome);
+void liberaLista(ListaD *lista);
 
 #endif

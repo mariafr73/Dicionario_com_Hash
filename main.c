@@ -3,11 +3,13 @@
 #include <string.h>
 #include <ctype.h>
 #include "include/dict.h"
-/*o que falta: adicionar verificações: não aceitar números e símbolos (e outras aí..rs :p),
-estrutura CRUD, funcao para liberar dicionario, função para remover palavra E significado (tente aproveitar a que ja tem)
+/* 
+ o que falta:
+ - adicionar verificações: não aceitar números e símbolos
+ - estrutura CRUD completa
+ - função para remover palavra e significado
+ - salvar as listas em arquivo.txt (opcional)
 */
-
-/*seria legal adicionar(opcional): salvar as listas em um arquivo.txt*/
 
 int main()
 {
