@@ -9,6 +9,9 @@
  - estrutura CRUD completa
  - função para remover palavra e significado
  - salvar as listas em arquivo.txt (opcional)
+
+ para corrigir:
+ - funcao buscar palavra
 */
 
 int main()
