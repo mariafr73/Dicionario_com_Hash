@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../include/dict.h"
-//#include "listaD.h"
+// #include "listaD.h"
 
 void AdicionaPalavra(ListaD *lista, char *nome, char *descricao)
 {
@@ -85,7 +85,8 @@ void removePalavra(ListaD *lista, char *nome)
     }
 }
 
-void liberaLista(ListaD *lista){
+void liberaLista(ListaD *lista)
+{
     Lista *atual = lista->primeiro;
     Lista *prox;
 
@@ -96,4 +97,18 @@ void liberaLista(ListaD *lista){
         atual = prox;
     }
     free(lista);
+}
+
+ListaD *buscaLista(ListaD *lista, char *nome)
+{
+    Lista *auxiliar;
+    for (auxiliar = lista; auxiliar != NULL; auxiliar = auxiliar->prox)
+    {
+        if (strcmp(auxiliar->nome, nome) == 0)
+        {
+            return nome;
+        }
+
+        return NULL;
+    }
 }

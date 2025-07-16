@@ -16,3 +16,5 @@ int funcaoHash(char *nome)
     int posicao = nome[0];
     return posicao - 97;
 }
+
+//void verificaPalavra(char *palavra);

@@ -11,7 +11,7 @@ void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao)
         return;
     }
 
-    AdicionaPalavra(dicionario->aurelio[indice], nome, descricao);//erro de segmentaçaõ
+    AdicionaPalavra(dicionario->aurelio[indice], nome, descricao); // erro de segmentaçaõ
 }
 
 void imprimeDict(Dict *dicionario)
@@ -53,13 +53,36 @@ Dict *criaDict()
     return dicionario;
 }
 
-void liberaDict(Dict *dicionario) {
-    for (int i = 0; i < 26; i++) {
-        if (dicionario->aurelio[i] != NULL) {
+void liberaDict(Dict *dicionario)
+{
+    for (int i = 0; i < 26; i++)
+    {
+        if (dicionario->aurelio[i] != NULL)
+        {
             liberaLista(dicionario->aurelio[i]);
             dicionario->aurelio[i] = NULL;
         }
     }
 
     free(dicionario);
+}
+
+void buscaNoDicionario(Dict *dicionario, char *nome)
+{
+    ListaD *lista;
+    int indice = funcaoHash(nome);
+    if (indice == -1)
+    {
+        printf("Palavra inválida para hash!");
+        return;
+    }
+
+    lista = buscaLista(dicionario->aurelio[indice], nome);
+
+    if (lista)
+    {
+        imprimeLista(lista);
+    }
+
+    printf("Palavra não encontrada");
 }

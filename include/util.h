@@ -3,6 +3,6 @@
 
 void para_minusculas(char *string);
 int funcaoHash(char *nome);
-
+//void verificaPalavra(char *palavra);
 
 #endif
