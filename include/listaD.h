@@ -14,6 +14,6 @@ void inicializaLista(ListaD *lista);
 void imprimeLista(ListaD *lista);
 void removePalavra(ListaD *lista, char *nome);
 void liberaLista(ListaD *lista);
-ListaD *buscaLista(ListaD *lista, char *nome);
+Lista *buscaLista(ListaD *lista, char *nome);
 
 #endif

@@ -99,7 +99,7 @@ void liberaLista(ListaD *lista)
     free(lista);
 }
 
-ListaD *buscaLista(ListaD *lista, char *nome)
+Lista *buscaLista(ListaD *lista, char *nome)
 {
     Lista *auxiliar;
     for (auxiliar = lista; auxiliar != NULL; auxiliar = auxiliar->prox)
@@ -108,7 +108,6 @@ ListaD *buscaLista(ListaD *lista, char *nome)
         {
             return nome;
         }
-
-        return NULL;
     }
+    return NULL;
 }

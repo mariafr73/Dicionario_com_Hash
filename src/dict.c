@@ -69,7 +69,7 @@ void liberaDict(Dict *dicionario)
 
 void buscaNoDicionario(Dict *dicionario, char *nome)
 {
-    ListaD *lista;
+    Lista *palavraEncontrada;
     int indice = funcaoHash(nome);
     if (indice == -1)
     {
@@ -77,12 +77,14 @@ void buscaNoDicionario(Dict *dicionario, char *nome)
         return;
     }
 
-    lista = buscaLista(dicionario->aurelio[indice], nome);
+    palavraEncontrada = buscaLista(dicionario->aurelio[indice], nome);
 
-    if (lista)
+    if (palavraEncontrada != NULL)
     {
-        imprimeLista(lista);
+        printf("Significado: %s\n", palavraEncontrada->descricao);
     }
-
-    printf("Palavra não encontrada");
+    else
+    {
+        printf("Palavra não encontrada");
+    }
 }
