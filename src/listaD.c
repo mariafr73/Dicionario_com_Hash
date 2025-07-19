@@ -101,12 +101,17 @@ void liberaLista(ListaD *lista)
 
 Lista *buscaLista(ListaD *lista, char *nome)
 {
+    if (lista == NULL || lista->primeiro == NULL)
+    {
+        return NULL;
+    }
+
     Lista *auxiliar;
-    for (auxiliar = lista; auxiliar != NULL; auxiliar = auxiliar->prox)
+    for (auxiliar = lista->primeiro; auxiliar != NULL; auxiliar = auxiliar->prox)
     {
         if (strcmp(auxiliar->nome, nome) == 0)
         {
-            return nome;
+            return auxiliar;
         }
     }
     return NULL;

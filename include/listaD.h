@@ -16,4 +16,5 @@ void removePalavra(ListaD *lista, char *nome);
 void liberaLista(ListaD *lista);
 Lista *buscaLista(ListaD *lista, char *nome);
 
+
 #endif
