@@ -11,7 +11,7 @@ void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao)
         return;
     }
 
-    AdicionaPalavra(dicionario->aurelio[indice], nome, descricao); // erro de segmentaçaõ
+    AdicionaPalavra(dicionario->aurelio[indice], nome, descricao); 
 }
 
 void imprimeDict(Dict *dicionario)

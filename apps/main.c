@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "../include/dict.h"
-/* 
+/*
  o que falta:
  - adicionar verificações: não aceitar números e símbolos
  - estrutura CRUD completa
@@ -11,7 +11,7 @@
  - salvar as listas em arquivo.txt (opcional)
 
  para corrigir:
- - funcao buscar palavra
+
 */
 
 int main()
@@ -20,6 +20,8 @@ int main()
     int opcao;
     char nome[10];
     char descricao[100];
+    int verificaPalavra;
+    int verificaDescricao;
     do
     {
         printf("========================\n");
@@ -32,21 +34,25 @@ int main()
         printf("-> ");
         scanf("%d", &opcao);
         getchar();
-        //funcao para limpar tela
-        // funcao para verificar se é numero
-
+        // funcao para limpar tela
+        //  funcao para verificar se é numero
 
         switch (opcao)
         {
         case 1:
-            printf("Insira a palavra: ");
-            scanf("%[^\n]", nome);
-            getchar();
-            // funcao de nao aceitar numeros e simbolos
-            printf("Insira o significado: ");
-            scanf("%[^\n]", descricao);
-            getchar();
-            // funcao de nao aceitar numeros e simbolos
+            do
+            {
+                printf("Insira a palavra: ");
+                scanf("%[^\n]", nome);
+                getchar();
+                verificaPalavra = palavraValida(nome);
+
+                printf("Insira o significado: ");
+                scanf("%[^\n]", descricao);
+                getchar();
+                verificaDescricao = palavraValida(descricao);
+            } while (verificaPalavra != 1 || verificaDescricao != 1);
+
             adicionaNaTabela(dicionario, nome, descricao);
 
             break;
@@ -55,9 +61,8 @@ int main()
             printf("Insira a palavra ");
             scanf("%[^\n]", nome);
             getchar();
-            //funcao de nao aceitar numeros e simbolos
+            // funcao de nao aceitar numeros e simbolos
             buscaNoDicionario(dicionario, nome);
-
 
             break;
 

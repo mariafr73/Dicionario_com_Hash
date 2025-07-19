@@ -1,5 +1,6 @@
 #include "../include/util.h"
 #include <ctype.h>
+#include <stdio.h>
 
 void para_minusculas(char *string)
 {
@@ -17,4 +18,15 @@ int funcaoHash(char *nome)
     return posicao - 97;
 }
 
-//void verificaPalavra(char *palavra);
+int palavraValida(char *palavra)
+{
+    for (int i = 0; palavra[i] != '\0'; i++)
+    {
+        if (!isalpha(palavra[i]))
+        {
+            printf("Caracter inválido!\n\n");
+            return 0;
+        }
+    }
+    return 1;
+}

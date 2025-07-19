@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../include/dict.h"
-// #include "listaD.h"
 
 void AdicionaPalavra(ListaD *lista, char *nome, char *descricao)
 {
