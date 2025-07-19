@@ -1,6 +1,7 @@
 #include "../include/util.h"
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void para_minusculas(char *string)
 {
@@ -23,6 +24,40 @@ int palavraValida(char *palavra)
     for (int i = 0; palavra[i] != '\0'; i++)
     {
         if (!isalpha(palavra[i]))
+        {
+            printf("Caracter inválido!\n\n");
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void menu_opcoes()
+{
+    printf("========================\n");
+    printf("[1] - Adicionar palavra\n");
+    printf("[2] - Buscar palavra\n");
+    printf("[3] - Imprimir\n");
+    printf("[4] - Remover palavra\n");
+    printf("[0] - Sair\n");
+    printf("========================\n");
+    printf("-> ");
+}
+
+void limpa_tela()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+int retornaNomeValido(char *nome)
+{
+    for (int i = 0; nome[i] != '\0'; i++)
+    {
+        if (!isalpha(nome[i]))
         {
             printf("Caracter inválido!\n\n");
             return 0;

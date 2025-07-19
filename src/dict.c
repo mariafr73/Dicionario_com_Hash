@@ -11,6 +11,11 @@ void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao)
         return;
     }
 
+    int verificaPalavra;
+    int verificaDescricao;
+
+    
+
     AdicionaPalavra(dicionario->aurelio[indice], nome, descricao); 
 }
 

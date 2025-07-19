@@ -5,10 +5,11 @@
 #include "../include/dict.h"
 /*
  o que falta:
- - adicionar verificações: não aceitar números e símbolos
  - estrutura CRUD completa
  - função para remover palavra e significado
  - salvar as listas em arquivo.txt (opcional)
+ - makefile
+ - verificar se é numero
 
  para corrigir:
 
@@ -22,20 +23,13 @@ int main()
     char descricao[100];
     int verificaPalavra;
     int verificaDescricao;
+    int verificador;
     do
     {
-        printf("========================\n");
-        printf("[1] - Adicionar palavra\n");
-        printf("[2] - Buscar palavra\n");
-        printf("[3] - Imprimir\n");
-        printf("[4] - Remover palavra\n");
-        printf("[0] - Sair\n");
-        printf("========================\n");
-        printf("-> ");
+        menu_opcoes();
         scanf("%d", &opcao);
         getchar();
-        // funcao para limpar tela
-        //  funcao para verificar se é numero
+        limpa_tela();
 
         switch (opcao)
         {
@@ -51,17 +45,20 @@ int main()
                 scanf("%[^\n]", descricao);
                 getchar();
                 verificaDescricao = palavraValida(descricao);
-            } while (verificaPalavra != 1 || verificaDescricao != 1);
+            } while (!verificaPalavra || !verificaDescricao);
 
             adicionaNaTabela(dicionario, nome, descricao);
 
             break;
 
         case 2:
-            printf("Insira a palavra ");
-            scanf("%[^\n]", nome);
-            getchar();
-            // funcao de nao aceitar numeros e simbolos
+            do
+            {
+                printf("Insira a palavra: ");
+                scanf("%[^\n]", nome);
+                getchar();
+                verificador = retornaNomeValido(nome);
+            } while (!verificador);
             buscaNoDicionario(dicionario, nome);
 
             break;
@@ -73,7 +70,7 @@ int main()
             break;
 
         default:
-            printf("Opcao invalida");
+            printf("Opcao invalida!\n");
             break;
         }
     } while (opcao != 0);
