@@ -19,9 +19,22 @@ int funcaoHash(char *nome)
     return posicao - 97;
 }
 
-int palavraValida(char *palavra)
+int descricaoValida(char *palavra)
 {
     for (int i = 0; palavra[i] != '\0'; i++)
+    {
+        if (!isalpha(palavra[i]) && !isspace(palavra[i]))
+        {
+            printf("Caracter inválido!\n\n");
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int palavraValida(char *palavra)
+{
+      for (int i = 0; palavra[i] != '\0'; i++)
     {
         if (!isalpha(palavra[i]))
         {

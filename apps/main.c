@@ -44,7 +44,7 @@ int main()
                 printf("Insira o significado: ");
                 scanf("%[^\n]", descricao);
                 getchar();
-                verificaDescricao = palavraValida(descricao);
+                verificaDescricao = descricaoValida(descricao);
             } while (!verificaPalavra || !verificaDescricao);
 
             adicionaNaTabela(dicionario, nome, descricao);
@@ -68,6 +68,12 @@ int main()
             imprimeDict(dicionario);
 
             break;
+
+        case 4:
+            printf("Insira a palavra para remover: ");
+            scanf("%[^\n]", nome);
+            getchar();
+            verificador = retornaNomeValido(nome);
 
         default:
             printf("Opcao invalida!\n");
