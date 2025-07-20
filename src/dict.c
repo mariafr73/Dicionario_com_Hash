@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "../include/dict.h"
 
 void adicionaNaTabela(Dict *dicionario, char *nome, char *descricao)
