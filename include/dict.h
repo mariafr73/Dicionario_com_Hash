@@ -14,5 +14,7 @@ void imprimeDict(Dict *dicionario);
 void liberaDict(Dict *dicionario);
 Dict *criaDict();
 void buscaNoDicionario(Dict *dicionario, char *nome);
+void salvarEmArquivo(Dict *dicionario, const char *nomeArquivo);
+void carregarDeArquivo(Dict *dicionario, const char *nomeArquivo);
 
 #endif
