@@ -3,17 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "../include/dict.h"
-/*
- o que falta:
- - estrutura CRUD completa
- - função para remover palavra e significado
- - salvar as listas em arquivo.txt (opcional)
- - makefile
- - verificar se é numero
 
- para corrigir:
-
-*/
 
 int main()
 {
