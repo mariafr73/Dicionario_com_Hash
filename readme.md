@@ -27,7 +27,6 @@ Este projeto implementa um dicionário que utiliza uma tabela hash para armazena
 - Buscar palavras  
 - Editar palavras e significados 
 - Remover palavras  
-- Salvar e carregar o dicionário de um arquivo texto
 
 <br>
 
@@ -36,7 +35,6 @@ Este projeto implementa um dicionário que utiliza uma tabela hash para armazena
 - `include/` — arquivos `.h` (headers)  
 - `src/` — arquivos `.c` com implementação  
 - `apps/` — arquivo principal `main.c`  
-- `dicionario.txt` — arquivo de dados onde o dicionário é salvo (gerado automaticamente)
 
 ---
 <br>
@@ -80,8 +78,6 @@ gcc apps/main.c src/dict.c src/listaD.c src/util.c -Iinclude -o main
 ```
 ./main
 ```
-5. Após a execução, o arquivo `dicionario.txt` será gerado na pasta do projeto.
----
 <br>
 
 # 🧑‍💻 desenvolvedores 
