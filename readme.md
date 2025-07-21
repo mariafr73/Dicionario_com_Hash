@@ -61,7 +61,6 @@ gcc apps/main.c src/dict.c src/listaD.c src/util.c -Iinclude -o main.exe
 ```
 .\main.exe
 ```
-5. Após a execução, o arquivo `dicionario.txt` será gerado na pasta do projeto.
 ---
 
 ## 🐧 Linux
@@ -80,7 +79,7 @@ gcc apps/main.c src/dict.c src/listaD.c src/util.c -Iinclude -o main
 ```
 <br>
 
-# 🧑‍💻 desenvolvedores 
+# 🧑‍💻 Desenvolvedores 
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/155568241?v=4](https://avatars.githubusercontent.com/u/155568241?v=4](https://avatars.githubusercontent.com/u/155568241?v=4" width=115><br><sub> Maria Francisca </sub>](https://github.com/mariafr73) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/106347376?v=4" width=115><br><sub> Alice Pinheiro </sub>](https://github.com/AliceSantoi) |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/157031016?v=4](https://avatars.githubusercontent.com/u/155568241?v=4](https://avatars.githubusercontent.com/u/155568241?v=4" width=115><br><sub> Gabrielle Naiare </sub>](https://github.com/gabinaiare) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/218805338?v=4" width=115><br><sub> Pedro Cordeiro </sub>](https://github.com/pedrocordeiro-l)| :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
