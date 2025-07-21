@@ -4,19 +4,17 @@
 #include <ctype.h>
 #include "../include/dict.h"
 
-
 int main()
 {
     Dict *dicionario = criaDict();
-    carregarDeArquivo(dicionario, "dicionario.txt");
- 
+
     int opcao;
     char nome[10];
     char descricao[100];
     int verificaPalavra;
     int verificaDescricao;
     int verificador;
-    
+
     do
     {
         menu_opcoes();
@@ -62,8 +60,9 @@ int main()
 
             break;
 
-         case 4:
-            do {
+        case 4:
+            do
+            {
                 printf("Insira a palavra que deseja remover: ");
                 scanf("%[^\n]", nome);
                 getchar();
@@ -77,8 +76,7 @@ int main()
             break;
         }
     } while (opcao != 0);
- 
-    salvarEmArquivo(dicionario, "dicionario.txt");
+
     liberaDict(dicionario);
 
     return 0;
