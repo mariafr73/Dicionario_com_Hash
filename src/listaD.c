@@ -51,6 +51,7 @@ void removePalavra(ListaD *lista, char *nome)
 {
     if (lista->primeiro == NULL)
     {
+        printf("nome não encontrado!\n");
         return;
     }
     Lista *atual = lista->primeiro;
@@ -79,6 +80,7 @@ void removePalavra(ListaD *lista, char *nome)
             lista->tamanho--;
             return;
         }
+
         anterior = atual;
         atual = atual->prox;
     }

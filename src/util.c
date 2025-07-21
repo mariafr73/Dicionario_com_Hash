@@ -34,7 +34,7 @@ int descricaoValida(char *palavra)
 
 int palavraValida(char *palavra)
 {
-      for (int i = 0; palavra[i] != '\0'; i++)
+    for (int i = 0; palavra[i] != '\0'; i++)
     {
         if (!isalpha(palavra[i]))
         {

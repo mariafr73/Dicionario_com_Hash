@@ -93,37 +93,5 @@ void buscaNoDicionario(Dict *dicionario, char *nome)
     }
 }
 
-void salvarEmArquivo(Dict *dicionario, const char *nomeArquivo) {
-    FILE *fp = fopen(nomeArquivo, "w");
-    if (!fp) {
-        printf("Erro ao abrir o arquivo para escrita.\n");
-        return;
-    }
 
-    for (int i = 0; i < 26; i++) {
-        Lista *atual = dicionario->aurelio[i]->primeiro;
-        while (atual != NULL) {
-            fprintf(fp, "Nome: %s;\nSignificado: %s.\n\n", atual->nome, atual->descricao);
-            atual = atual->prox;
-        }
-    }
 
-    fclose(fp);
-}
-
-void carregarDeArquivo(Dict *dicionario, const char *nomeArquivo) {
-    FILE *fp = fopen(nomeArquivo, "r");
-    if (!fp) return;
-
-    char linha[200];
-    while (fgets(linha, sizeof(linha), fp)) {
-        char *nome = strtok(linha, ";");
-        char *desc = strtok(NULL, "\n");
-
-        if (nome && desc) {
-            adicionaNaTabela(dicionario, nome, desc);
-        }
-    }
-
-    fclose(fp);
-}
