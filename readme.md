@@ -7,7 +7,7 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)
+![Status](https://img.shields.io/badge/Status-Finalizado-green)
 ![Linguagem C](https://img.shields.io/badge/Linguagem-C-blue.svg?logo=c&logoColor=white)
 ![Suporte](https://img.shields.io/badge/Suporte-Windows%20%7C%20Linux-blue)
 
