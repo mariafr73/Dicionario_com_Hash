@@ -31,11 +31,21 @@ Este projeto implementa um dicionário que utiliza uma tabela hash para armazena
 <br>
 
 ## 🏗️ Estrutura do Projeto  
-
-- `include/` — arquivos `.h` (headers)  
-- `src/` — arquivos `.c` com implementação  
-- `apps/` — arquivo principal `main.c`  
-
+```shell
+├── apps
+│   ├── main.c
+│   └── programa
+├── include
+│   ├── dict.h
+│   ├── listaD.h
+│   ├── lista.h
+│   └── util.h
+├── readme.md
+└── src
+    ├── dict.c
+    ├── listaD.c
+    └── util.c
+```
 ---
 <br>
 
